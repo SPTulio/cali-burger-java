@@ -1,0 +1,99 @@
+/* Estilo do Cali Burger */
+
+.root {
+    -fx-font-size: 13px;
+    -fx-base: #f3f1ee;
+    -fx-background: #f3f1ee;
+    -fx-accent: #d9480f;
+    -fx-focus-color: #d9480f;
+    -fx-faint-focus-color: #d9480f22;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    -fx-background-color: #1f1b18;
+    -fx-padding: 12 18 12 18;
+}
+.cabecalho .titulo {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+.cabecalho .subtitulo {
+    -fx-text-fill: #f4a37d;
+}
+
+/* Abas */
+.tab-pane > .tab-header-area {
+    -fx-padding: 6 12 0 12;
+}
+.tab {
+    -fx-padding: 4 14 4 14;
+}
+.tab:selected .tab-label {
+    -fx-font-weight: bold;
+}
+
+/* Painéis */
+.conteudo {
+    -fx-padding: 12;
+}
+.painel {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 6;
+    -fx-border-color: #e2ddd7;
+    -fx-border-radius: 6;
+    -fx-padding: 14;
+    -fx-spacing: 8;
+}
+.secao {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2b2522;
+}
+.status {
+    -fx-text-fill: #6b625b;
+}
+.total {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Botões */
+.botao-primario {
+    -fx-base: #d9480f;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+.botao-perigo {
+    -fx-base: #f8e1df;
+    -fx-text-fill: #a61e1e;
+}
+.botao-discreto {
+    -fx-background-color: transparent;
+    -fx-text-fill: #a61e1e;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+/* Tabelas */
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+}
+.coluna-numero {
+    -fx-alignment: CENTER-RIGHT;
+}
+.table-row-cell:cancelado .text {
+    -fx-strikethrough: true;
+}
+.table-row-cell:cancelado {
+    -fx-opacity: 0.6;
+}
+.table-row-cell:entregue {
+    -fx-control-inner-background: #eef7ee;
+    -fx-control-inner-background-alt: #e6f2e6;
+}
+.table-row-cell:estoque-baixo {
+    -fx-control-inner-background: #fff1e6;
+    -fx-control-inner-background-alt: #ffe9d9;
+}
