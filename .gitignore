@@ -1,0 +1,16 @@
+# Maven
+target/
+
+# Dados gerados ao usar o sistema
+dados/
+*.dat
+
+# IDEs e sistema
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+.DS_Store
+Thumbs.db
