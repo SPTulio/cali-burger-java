@@ -83,6 +83,9 @@
 .coluna-numero {
     -fx-alignment: CENTER-RIGHT;
 }
+.coluna-centro {
+    -fx-alignment: CENTER;
+}
 .table-row-cell:cancelado .text {
     -fx-strikethrough: true;
 }

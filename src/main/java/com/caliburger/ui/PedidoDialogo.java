@@ -53,7 +53,7 @@ public final class PedidoDialogo extends Dialog<PedidoDialogo.Resultado> {
 
         ButtonType confirmar = new ButtonType(novo ? "Finalizar pedido" : "Salvar alterações",
                 ButtonBar.ButtonData.OK_DONE);
-        getDialogPane().getButtonTypes().addAll(confirmar, ButtonType.CANCEL);
+        getDialogPane().getButtonTypes().addAll(confirmar, Componentes.CANCELAR);
 
         // Seleção de produto e quantidade
         comboProduto.getItems().setAll(produtos);

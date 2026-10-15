@@ -95,8 +95,10 @@ public final class EstoqueTela implements Tela {
         for (TableColumn<Ingrediente, String> c : List.of(colunaQtd, colunaMinimo, colunaSituacao)) {
             c.setPrefWidth(100);
             c.setMaxWidth(130);
-            c.getStyleClass().add("coluna-numero");
         }
+        colunaQtd.getStyleClass().add("coluna-numero");
+        colunaMinimo.getStyleClass().add("coluna-numero");
+        colunaSituacao.getStyleClass().add("coluna-centro");
         colunaNome.setPrefWidth(320);
         tabela.getColumns().add(colunaNome);
         tabela.getColumns().add(colunaQtd);

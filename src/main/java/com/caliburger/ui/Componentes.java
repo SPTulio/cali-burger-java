@@ -5,6 +5,7 @@ import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
@@ -19,6 +20,11 @@ import java.util.function.Function;
 
 /** Funções auxiliares de interface usadas por todas as telas. */
 final class Componentes {
+
+    /** Botões com texto fixo em português, independente do idioma do sistema. */
+    static final ButtonType OK = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+    static final ButtonType CONFIRMAR = new ButtonType("Confirmar", ButtonBar.ButtonData.OK_DONE);
+    static final ButtonType CANCELAR = new ButtonType("Cancelar", ButtonBar.ButtonData.CANCEL_CLOSE);
 
     private Componentes() {
     }
@@ -72,7 +78,7 @@ final class Componentes {
     }
 
     static void erro(Node origem, String mensagem) {
-        Alert alerta = new Alert(Alert.AlertType.WARNING, mensagem, ButtonType.OK);
+        Alert alerta = new Alert(Alert.AlertType.WARNING, mensagem, OK);
         alerta.setHeaderText(null);
         alerta.setTitle("Atenção");
         alerta.initOwner(janela(origem));
@@ -80,11 +86,11 @@ final class Componentes {
     }
 
     static boolean confirmar(Node origem, String titulo, String mensagem) {
-        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION, mensagem, ButtonType.OK, ButtonType.CANCEL);
+        Alert alerta = new Alert(Alert.AlertType.CONFIRMATION, mensagem, CONFIRMAR, CANCELAR);
         alerta.setHeaderText(null);
         alerta.setTitle(titulo);
         alerta.initOwner(janela(origem));
-        return alerta.showAndWait().filter(ButtonType.OK::equals).isPresent();
+        return alerta.showAndWait().filter(CONFIRMAR::equals).isPresent();
     }
 
     static Optional<String> pedirTexto(Node origem, String titulo, String rotulo, String valorInicial) {
@@ -93,6 +99,7 @@ final class Componentes {
         dialogo.setHeaderText(null);
         dialogo.setGraphic(null);
         dialogo.setContentText(rotulo);
+        dialogo.getDialogPane().getButtonTypes().setAll(OK, CANCELAR);
         dialogo.initOwner(janela(origem));
         return dialogo.showAndWait();
     }
