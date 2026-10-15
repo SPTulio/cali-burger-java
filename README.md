@@ -96,6 +96,8 @@ São 31 testes automatizados com JUnit 5, cobrindo as regras de negócio e a per
 
 A cada push e pull request, o **GitHub Actions** compila o projeto, roda os testes e abre a interface em uma tela virtual para gerar as capturas acima, o que também confirma que todas as telas são montadas sem erros.
 
+Para atualizar as imagens do README depois de mudar a interface, adicione o rótulo `atualizar-capturas` ao pull request: o CI gera as capturas novas e as salva em `docs/img` na própria branch.
+
 ## Próximos passos
 
 - Baixa automática do estoque a partir das receitas dos produtos vendidos
