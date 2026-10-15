@@ -94,14 +94,16 @@ public final class EstoqueTela implements Tela {
                 i -> i.isEstoqueBaixo() ? "Repor" : "OK");
         for (TableColumn<Ingrediente, String> c : List.of(colunaQtd, colunaMinimo, colunaSituacao)) {
             c.setPrefWidth(100);
+            c.setMaxWidth(130);
             c.getStyleClass().add("coluna-numero");
         }
+        colunaNome.setPrefWidth(320);
         tabela.getColumns().add(colunaNome);
         tabela.getColumns().add(colunaQtd);
         tabela.getColumns().add(colunaMinimo);
         tabela.getColumns().add(colunaSituacao);
         tabela.getColumns().forEach(c -> c.setSortable(false));
-        tabela.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_FLEX_FIRST_COLUMN);
+        tabela.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
         tabela.setPlaceholder(new Label("Nenhum ingrediente cadastrado."));
         tabela.setRowFactory(t -> new TableRow<>() {
             @Override

@@ -75,12 +75,14 @@ public final class ProdutosTela implements Tela {
         TableColumn<Produto, String> colunaNome = Componentes.coluna("Produto", Produto::getNome);
         TableColumn<Produto, String> colunaPreco = Componentes.coluna("Preço", p -> Moeda.formatar(p.getPreco()));
         colunaPreco.getStyleClass().add("coluna-numero");
+        colunaNome.setPrefWidth(400);
         colunaPreco.setPrefWidth(120);
+        colunaPreco.setMaxWidth(160);
         colunaNome.setSortable(false);
         colunaPreco.setSortable(false);
         tabela.getColumns().add(colunaNome);
         tabela.getColumns().add(colunaPreco);
-        tabela.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_FLEX_FIRST_COLUMN);
+        tabela.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
         tabela.setPlaceholder(new Label("Nenhum produto cadastrado."));
         VBox.setVgrow(tabela, Priority.ALWAYS);
 
